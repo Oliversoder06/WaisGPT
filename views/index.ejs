@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaisGPT</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="sidebarCont">
+            <div class="haha">
+                <div class="box1">
+                    <button class="btn1">New Chat</button>
+                    <button class="btn2">[ ]</button>
+                </div>
+                <input type="text" class="search" placeholder="Search...">
+            </div>
+            <div class="setCont">
+                <div class="divider"></div>
+                <button class="btnSet">Settings</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="loader" style="display: none;"></div>
+        <div class="contContainer">
+            <div class="headerholder">
+                <h1>WaisGPT</h1>
+                <p>Better than ChatGPT</p>
+            </div>
+            <div class="outputCont scrollbar">
+                <% UserHistory.forEach(function(input, idx) { %>
+                    <div class="interaction">
+                        <div class="input">
+                            <p class="inputText"><%= input %></p>
+                        </div>
+                        <div class="output">
+                            <p class="outputText"><%= GPTHistory[idx] %></p>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+            <input type="text" class="gptinput" placeholder="Ask me anything...">
+        </div>
+    </div>
+</body>
+
+<script src="script.js"></script>
+
+</html>
